@@ -6,11 +6,11 @@ import com.maxproit.kotlin_mvvm.preferences.SharedPref
 import kotlin.jvm.internal.Ref
 
 class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
-    private var score = 0
+    private var score: Int = 0
     private var app: Application? = null
 
     init {
-        score = SharedPref(application).getScore()
+        score = SharedPref(application).getScore() ?: 0
         app = application
     }
 

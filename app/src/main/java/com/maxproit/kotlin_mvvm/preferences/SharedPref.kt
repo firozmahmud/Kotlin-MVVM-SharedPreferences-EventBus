@@ -13,10 +13,10 @@ class SharedPref(app: Application) {
     }
 
     fun saveScore(score: Int) {
-        sp!!.edit().putInt(AppConstants.SCORE_KEY, score).apply()
+        sp?.edit()?.putInt(AppConstants.SCORE_KEY, score)?.apply()
     }
 
-    fun getScore(): Int {
-        return sp!!.getInt(AppConstants.SCORE_KEY, 0)
+    fun getScore(): Int? {
+        return sp?.getInt(AppConstants.SCORE_KEY, 0)
     }
 }

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        scoreTv.text = viewModel!!.getScore().toString()
+        scoreTv.text = viewModel?.getScore().toString()
     }
 
     private fun initListener() {
@@ -32,18 +32,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, NextActivity::class.java))
         }
         incBtn.setOnClickListener {
-            viewModel!!.incScore()
-            scoreTv.text = viewModel!!.getScore().toString()
+            viewModel?.incScore()
+            scoreTv.text = viewModel?.getScore().toString()
         }
         decBtn.setOnClickListener {
-            viewModel!!.decScore()
-            scoreTv.text = viewModel!!.getScore().toString()
+            viewModel?.decScore()
+            scoreTv.text = viewModel?.getScore().toString()
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        viewModel!!.saveScoreWhenExit()
+        viewModel?.saveScoreWhenExit()
         Toast.makeText(this, "Destroyed", Toast.LENGTH_LONG).show()
     }
 }

@@ -9,7 +9,7 @@ class PrefRepository(private val app: Application) {
         SharedPref(app).saveScore(score)
     }
 
-    fun getScore(): Int {
+    fun getScore(): Int? {
         return SharedPref(app).getScore()
     }
 }
